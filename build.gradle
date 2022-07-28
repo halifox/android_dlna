@@ -3,3 +3,10 @@ plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.android.library) apply false
 }
+
+ext {
+    // For JitPack multi-module publications use com.github.<user>.<repo>.
+    // Override GROUP when the GitHub owner or repository name differs.
+    dlnaGroup = System.getenv('GROUP') ?: 'com.github.halifox.dlna'
+    dlnaVersion = System.getenv('VERSION') ?: '0.1.0-SNAPSHOT'
+}

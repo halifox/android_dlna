@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.halifox.dlna'
+    namespace 'com.android.cast.dlna.core'
     compileSdk {
         version = release(36) {
             minorApiLevel = 1
@@ -12,8 +12,7 @@ android {
     }
 
     defaultConfig {
-        minSdk 21
-
+        minSdk 19
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -24,10 +23,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
+
     publishing {
         singleVariant('release') {
             withSourcesJar()
@@ -36,13 +37,10 @@ android {
 }
 
 dependencies {
-    api project(':dlna:dlna-core')
-    api project(':dlna:dlna-dmc')
-    api project(':dlna:dlna-dmr')
-    api project(':dlna:dlna-dms')
-    testImplementation libs.junit
-    androidTestImplementation libs.ext.junit
-    androidTestImplementation libs.espresso.core
+    implementation libs.annotation
+    api libs.logger
+    api libs.cling.core
+    api libs.cling.support
 }
 
 afterEvaluate {
@@ -51,7 +49,7 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
                 groupId = rootProject.ext.dlnaGroup
-                artifactId = 'dlna'
+                artifactId = 'dlna-core'
                 version = rootProject.ext.dlnaVersion
             }
         }

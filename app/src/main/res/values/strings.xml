@@ -1,3 +1,20 @@
 <resources>
-    <string name="app_name">dlna</string>
+    <string name="app_name">DLNA Receiver Demo</string>
+    <string name="status_waiting">正在等待 DLNA 投送…</string>
+    <string name="status_starting">正在启动接收服务…</string>
+    <string name="status_loading">正在加载音频…</string>
+    <string name="status_playing">正在播放</string>
+    <string name="status_paused">已暂停</string>
+    <string name="status_stopped">已停止</string>
+    <string name="status_error">播放失败</string>
+    <string name="unknown_title">未知歌曲</string>
+    <string name="unknown_artist">未知歌手</string>
+    <string name="unknown_album">未知专辑</string>
+    <string name="action_play">播放</string>
+    <string name="action_pause">暂停</string>
+    <string name="action_stop">停止</string>
+    <string name="source_none">媒体地址：等待接收</string>
+    <string name="source_uri_format">媒体地址：%1$s</string>
+    <string name="album_art_description">专辑封面</string>
+    <string name="playback_progress_description">播放进度</string>
 </resources>
